@@ -1,11 +1,11 @@
 # GHM_Detection
-The implementation of “Gradient Harmonized Single-stage Detector” published on AAAI 2019.
+The implementation of [Gradient Harmonized Single-stage Detector](https://arxiv.org/abs/1811.05181) published on AAAI 2019 (Oral).
 
 ## Loss Functions
 * The GHM-C and GHM-R loss functions are available in loss/ghm_loss.py.
 
 ## Complete Training code
-* Complete training code will be released later.
+* Complete training code is based on [mmdetection](https://github.com/open-mmlab/mmdetection) and is coming soon.
 
 ## License and Citation
 The use of this software is RESTRICTED to **non-commercial research and educational purposes**.
