@@ -109,3 +109,6 @@ mmdet/version.py
 data
 .vscode
 .idea
+
+# custom
+experiments/

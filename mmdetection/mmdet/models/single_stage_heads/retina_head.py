@@ -168,7 +168,7 @@ class RetinaHead(nn.Module):
             loss_cls = self.ghmc_loss.calc(
                 cls_score,
                 labels,
-                label_weights)
+                label_weights) * cfg.ghmc.loss_scale
         else:
             loss_cls = weighted_sigmoid_focal_loss(
                 cls_score,
@@ -185,7 +185,7 @@ class RetinaHead(nn.Module):
             loss_reg = self.ghmr_loss.calc(
                 bbox_pred,
                 bbox_targets,
-                bbox_weights)
+                bbox_weights) * cfg.ghmr.loss_scale
         else:
             loss_reg = weighted_smoothl1(
                 bbox_pred,

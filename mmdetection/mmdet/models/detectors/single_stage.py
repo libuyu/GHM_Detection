@@ -43,12 +43,7 @@ class SingleStageDetector(BaseDetector):
                     m.init_weights()
             else:
                 self.neck.init_weights()
-        if self.train_cfg is None:
-            return
-        if 'ghmc' in self.train_cfg:
-            self.bbox_head.init_weights(bias=0.5)
-        else:
-            self.bbox_head.init_weights(bias=0.01)
+        self.bbox_head.init_weights()
 
     def extract_feat(self, img):
         x = self.backbone(img)
