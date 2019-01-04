@@ -36,15 +36,9 @@ train_cfg = dict(
         neg_iou_thr=0.4,
         min_pos_iou=0,
         ignore_iof_thr=-1),
-    ghmc=dict(
-        bins=30,
-        momentum=0.5,
-        loss_scale=0.33),
-    ghmr=dict(
-        mu=0.02,
-        bins=10,
-        momentum=0.7,
-        loss_scale=3),
+    smoothl1_beta=0.11,
+    gamma=2.0,
+    alpha=0.25,
     allowed_border=-1,
     pos_weight=-1,
     debug=False)
@@ -56,7 +50,7 @@ test_cfg = dict(
     max_per_img=100)
 # dataset settings
 dataset_type = 'CocoDataset'
-data_root = '../../data/coco/'
+data_root = '../mmdetection/data/coco/'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 data = dict(
@@ -120,7 +114,7 @@ total_epochs = 12
 device_ids = range(8)
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-work_dir = './ghm'
+work_dir = './baseline'
 load_from = None
 resume_from = None
 workflow = [('train', 1)]
