@@ -7,7 +7,7 @@ The implementation of [Gradient Harmonized Single-stage Detector](https://arxiv.
 
 ## Training Code
 * The main training code is based on [mmdetection](https://github.com/open-mmlab/mmdetection). Please see [this](https://github.com/open-mmlab/mmdetection/blob/master/INSTALL.md) for installation issues (note that you do not need to clone the mmdetection repo again).
-* We provide training and testing scripts and configuration files for both GHM and baseline (focal loss and smooth L1 loss) in the [experiments](https://github.com/libuyu/GHM_Detection/tree/master/experiments) directory. You need specify the path of your own pre-trained model in the config files._
+* We provide training and testing scripts and configuration files for both GHM and baseline (focal loss and smooth L1 loss) in the [experiments](https://github.com/libuyu/GHM_Detection/tree/master/experiments) directory. You need specify the path of your own pre-trained model in the config files.
 
 ## Result
 
