@@ -13,10 +13,11 @@ The implementation of [Gradient Harmonized Single-stage Detector](https://arxiv.
 
 Training using the Res50-FPN backbone and testing on COCO minival.
 
-| Method | AP |
-| FL + SL1 | 35.6 |
-| GHM-C + SL1 | 35.8 |
-| GHM-C + GHM-R | 36.3 |
+Method | AP
+-- | --
+FL + SL1 | 35.6%
+GHM-C + SL1 | 35.8%
+GHM-C + GHM-R | 36.3%
 
 ## License and Citation
 The use of this code is RESTRICTED to **non-commercial research and educational purposes**.
