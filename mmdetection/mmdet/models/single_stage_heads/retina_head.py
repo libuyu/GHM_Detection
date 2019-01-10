@@ -94,14 +94,16 @@ class RetinaHead(nn.Module):
             padding=1)
         self.debug_imgs = None
 
-    def init_weights(self, bias=0.01):
+    def init_weights(self):
         for m in self.cls_convs:
             normal_init(m, std=0.01)
         for m in self.reg_convs:
             normal_init(m, std=0.01)
-        bias_cls = bias_init_with_prob(bias)
-        normal_init(self.retina_cls, std=0.01, bias=bias_cls)
-        normal_init(self.retina_reg, std=0.01)
+        if self.train_cfg is not None:
+            bias = self.train_cfg.get('init_bias', 0.01)
+            bias_cls = bias_init_with_prob(bias)
+            normal_init(self.retina_cls, std=0.01, bias=bias_cls)
+            normal_init(self.retina_reg, std=0.01)
 
     def forward_single(self, x):
         cls_feat = x
@@ -168,7 +170,7 @@ class RetinaHead(nn.Module):
             loss_cls = self.ghmc_loss.calc(
                 cls_score,
                 labels,
-                label_weights) * cfg.ghmc.loss_scale
+                label_weights) * cfg.ghmc.get('loss_scale', 1.0)
         else:
             loss_cls = weighted_sigmoid_focal_loss(
                 cls_score,
@@ -185,7 +187,7 @@ class RetinaHead(nn.Module):
             loss_reg = self.ghmr_loss.calc(
                 bbox_pred,
                 bbox_targets,
-                bbox_weights) * cfg.ghmr.loss_scale
+                bbox_weights) * cfg.ghmr.get('loss_scale', 1.0)
         else:
             loss_reg = weighted_smoothl1(
                 bbox_pred,

@@ -21,6 +21,7 @@ class SingleStageDetector(BaseDetector):
             self.neck = builder.build_neck(neck)
         self.bbox_head = builder.build_single_stage_head(bbox_head)
         self.train_cfg = train_cfg
+        self.bbox_head.train_cfg = train_cfg
         self.test_cfg = test_cfg
         self.init_weights(pretrained=pretrained)
         # build ghm loss if used

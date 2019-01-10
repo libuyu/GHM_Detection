@@ -17,7 +17,7 @@ Method | AP
 -- | --
 FL + SL1 | 35.6%
 GHM-C + SL1 | 35.8%
-GHM-C + GHM-R | 36.3%
+GHM-C + GHM-R | 37.0%
 
 ## License and Citation
 The use of this code is RESTRICTED to **non-commercial research and educational purposes**.
