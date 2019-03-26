@@ -114,7 +114,7 @@ This project is released under the [MIT license](https://github.com/libuyu/GHM_D
 ```
 @inproceedings{li2019gradient,
   title={Gradient Harmonized Single-stage Detector},
-  author={Buyu Li and Yu Liu and Xiaogang Wang},
+  author={Li, Buyu and Liu, Yu and Wang, Xiaogang},
   booktitle={AAAI},
   year={2019}
 }
