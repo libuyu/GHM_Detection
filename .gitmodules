@@ -1,0 +1,3 @@
+[submodule "mmdetection"]
+	path = mmdetection
+	url = git@github.com:libuyu/mmdetection.git

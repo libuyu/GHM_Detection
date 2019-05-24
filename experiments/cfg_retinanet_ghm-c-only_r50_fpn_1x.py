@@ -27,7 +27,14 @@ model = dict(
         anchor_ratios=[0.5, 1.0, 2.0],
         anchor_strides=[8, 16, 32, 64, 128],
         target_means=[.0, .0, .0, .0],
-        target_stds=[1.0, 1.0, 1.0, 1.0]))
+        target_stds=[1.0, 1.0, 1.0, 1.0],
+        loss_cls=dict(
+            type='GHMC',
+            bins=30,
+            momentum=0.75,
+            use_sigmoid=True,
+            loss_weight=1.0),
+        loss_bbox=dict(type='SmoothL1Loss', beta=0.11, loss_weight=1.0)))
 # training and testing settings
 train_cfg = dict(
     assigner=dict(
@@ -36,10 +43,6 @@ train_cfg = dict(
         neg_iou_thr=0.4,
         min_pos_iou=0,
         ignore_iof_thr=-1),
-    ghmc=dict(
-        bins=30,
-        momentum=0.5),
-    smoothl1_beta=0.11,
     allowed_border=-1,
     pos_weight=-1,
     debug=False)

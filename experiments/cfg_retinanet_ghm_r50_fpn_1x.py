@@ -1,7 +1,7 @@
 # model settings
 model = dict(
     type='RetinaNet',
-    pretrained='/home/byli/pretrained_model/resnet50-19c8e357.pth',
+    pretrained='/mnt/lustre/share/DSK/model_zoo/pytorch/imagenet/resnet50-19c8e357.pth',
     backbone=dict(
         type='ResNet',
         depth=50,
@@ -27,7 +27,19 @@ model = dict(
         anchor_ratios=[0.5, 1.0, 2.0],
         anchor_strides=[8, 16, 32, 64, 128],
         target_means=[.0, .0, .0, .0],
-        target_stds=[1.0, 1.0, 1.0, 1.0]))
+        target_stds=[1.0, 1.0, 1.0, 1.0],
+        loss_cls=dict(
+            type='GHMC',
+            bins=30,
+            momentum=0.75,
+            use_sigmoid=True,
+            loss_weight=1.0),
+        loss_bbox=dict(
+            type='GHMR', 
+            mu=0.02, 
+            bins=10,
+            momentum=0.7,
+            loss_weight=10.0)))
 # training and testing settings
 train_cfg = dict(
     assigner=dict(
@@ -36,14 +48,6 @@ train_cfg = dict(
         neg_iou_thr=0.4,
         min_pos_iou=0,
         ignore_iof_thr=-1),
-    ghmc=dict(
-        bins=30,
-        momentum=0.75),
-    ghmr=dict(
-        mu=0.02,
-        bins=10,
-        momentum=0.7,
-        loss_scale=10),
     allowed_border=-1,
     pos_weight=-1,
     debug=False)
@@ -55,7 +59,7 @@ test_cfg = dict(
     max_per_img=100)
 # dataset settings
 dataset_type = 'CocoDataset'
-data_root = '../mmdetection/data/coco/'
+data_root = '../data/coco/'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 data = dict(
