@@ -2,13 +2,18 @@
 # GHM_Detection
 The implementation of [Gradient Harmonized Single-stage Detector](https://arxiv.org/abs/1811.05181) published on AAAI 2019 (**Oral**).
 
+## Updates
+(May 24, 2019)
+- Make mmdetection a submodule to keep it up-to-date.
+
 ## Installation
 This project is based on [mmdetection](https://github.com/open-mmlab/mmdetection). And we add GHM losses in it and modify some code for compatibility.
 
 ### Requirements
-- Python 3.4+
-- PyTorch 0.4.1+ 
-  (We have the [pytorch-0.3](https://github.com/libuyu/GHM_Detection/tree/pytorch-0.3) branch for 0.3.x version, but it is no longer updated)
+- Python 3.5+
+- PyTorch 1.0+ 
+  (Based on the current version of mmdetection)
+- CUDA 9.0+
 
 ### Setup the Environment and Packages
 i. Create a new environment
@@ -32,7 +37,7 @@ conda install cython
 ### Install GHM
 i. Clone the repository
 ```shell
-git clone https://github.com/libuyu/GHM_Detection.git
+git clone --recursive https://github.com/libuyu/GHM_Detection.git
 ```
 
 ii. Compile extensions
