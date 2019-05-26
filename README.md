@@ -7,7 +7,7 @@ The implementation of [Gradient Harmonized Single-stage Detector](https://arxiv.
 - Make mmdetection a submodule to keep it up-to-date.
 
 ## Installation
-This project is based on [mmdetection](https://github.com/open-mmlab/mmdetection). And we add GHM losses in it and modify some code for compatibility.
+This project is based on [mmdetection](https://github.com/open-mmlab/mmdetection). 
 
 ### Requirements
 - Python 3.5+
@@ -99,8 +99,8 @@ The configuration parameters are mainly in the cfg_*.py files. The parameters yo
 - *total_epochs*, *lr_config.step*: set the learning rate decay strategy
 
 ### Loss Functions
-* The GHM-C and GHM-R loss functions are available in [ghm_loss.py](https://github.com/libuyu/GHM_Detection/blob/master/mmdetection/mmdet/core/loss/ghm_loss.py).
-* The code works for pytorch 0.4.1 and later version.
+* The GHM-C and GHM-R loss functions are available in [ghm_loss.py](https://github.com/libuyu/mmdetection/blob/master/mmdet/models/losses/ghm_loss.py).
+* The code works for pytorch 1.0.1 and later version.
 
 ## Result
 
