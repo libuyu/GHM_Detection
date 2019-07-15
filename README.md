@@ -126,12 +126,13 @@ This project is released under the [MIT license](https://github.com/libuyu/GHM_D
 ```
 If the code helps you in your research, please also cite:
 ```
-@misc{mmdetection2018,
-  author =       {Kai Chen and Jiangmiao Pang and Jiaqi Wang and Yu Xiong and Xiaoxiao Li
-                  and Shuyang Sun and Wansen Feng and Ziwei Liu and Jianping Shi and
-                  Wanli Ouyang and Chen Change Loy and Dahua Lin},
-  title =        {mmdetection},
-  howpublished = {\url{https://github.com/open-mmlab/mmdetection}},
-  year =         {2018}
+@article{mmdetection,
+  title   = {{MMDetection}: Open MMLab Detection Toolbox and Benchmark},
+  author  = {Kai Chen, Jiaqi Wang, Jiangmiao Pang, Yuhang Cao, Yu Xiong, Xiaoxiao Li,
+             Shuyang Sun, Wansen Feng, Ziwei Liu, Jiarui Xu, Zheng Zhang, Dazhi Cheng,
+             Chenchen Zhu, Tianheng Cheng, Qijie Zhao, Buyu Li, Xin Lu, Rui Zhu, Yue Wu,
+             Jifeng Dai, Jingdong Wang, Jianping Shi, Wanli Ouyang, Chen Change Loy, Dahua Lin},
+  journal = {arXiv preprint arXiv:1906.07155},
+  year    = {2019}
 }
 ```
